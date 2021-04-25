@@ -1,1 +1,8 @@
-<p>search-container works!</p>
+<div>
+    <app-search-input (search)="handleSearch($event)"></app-search-input>
+    
+    <div *ngIf="loading" style="margin: 3rem;">
+      <div class="ui active centered inline loader"></div>
+    </div>
+    <app-search-list *ngIf="!loading" [videos]="videos"></app-search-list>
+  </div>

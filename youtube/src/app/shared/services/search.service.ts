@@ -15,5 +15,8 @@ export class SearchService {
 
   getVideos(query:string):Observable<any>{
     return this.http.get(`${this.API_URL}?q=${query}&key=${this.API_KEY}&part=snippet&type=video&maxResults=10`)
+    .pipe(
+      map((response:any)=>response.items)
+    )
   }
 }
